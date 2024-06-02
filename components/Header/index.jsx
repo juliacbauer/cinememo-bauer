@@ -24,9 +24,6 @@ export default function Header(props) {
               <Link href="/watched">Watched</Link>
             </p>
             <p>
-              <Link href="/generator">Generator</Link>
-            </p>
-            <p>
               Logout
             </p>
           </div>
@@ -38,6 +35,9 @@ export default function Header(props) {
           </p>
           <p>
             <Link href="/search">Search</Link>
+          </p>
+          <p>
+            <Link href="/generator">Generator</Link>
           </p>
           <p>
             <Link href="/signup">Sign Up</Link>

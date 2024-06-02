@@ -4,12 +4,14 @@ import Footer from "../components/Footer";
 
 export default function Login() {
   return (
-    <main>
-      <Header />
-      <div className={styles.main}>
-        <h1>Login</h1>
-      </div>
-      <Footer />
-    </main>
+    <>
+      <main>
+        <Header />
+        <div className={styles.main}>
+          <h1>Login</h1>
+        </div>
+        <Footer />
+      </main>
+    </>
   );
 }

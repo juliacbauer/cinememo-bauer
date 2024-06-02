@@ -4,6 +4,7 @@ import Header from "../components/Header"
 
 export default function Home() {
   return (
+    <>
       <main>
         <Header />
         <div className={styles.main}>
@@ -11,5 +12,6 @@ export default function Home() {
         </div>
         <Footer />
       </main>
-    );
-  }
+    </>
+  );
+}

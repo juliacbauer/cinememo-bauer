@@ -6,7 +6,7 @@
     "DB_NAME": "movie_db"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run mongo && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,8 +21,8 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "iron-session": "^6.3.1",
-    "mongodb": "^6.6.2",
-    "mongoose": "^8.4.0",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
