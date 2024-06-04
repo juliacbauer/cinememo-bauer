@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
-import { useRouter } from "next/router";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
