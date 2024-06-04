@@ -10,7 +10,7 @@ export default function Generator() {
   async function handleGenerator() {
     try {
       setLoading(true)
-      const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&type=movie&i=tt${String(Math.floor(Math.random() * 1000000) + 1).padStart(7, '0')}`)
+      const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&type=movie&i=tt${String(Math.floor(Math.random() * 1000000) + 1).padStart(7, "0")}`)
       const movieData = await res.json()
       console.log(movieData)
       if (movieData.Response === "True" && movieData.Type !== "episode" && movieData.Type !== "series" && movieData.Poster !== "N/A" && movieData.Plot !== "N/A") {
@@ -19,7 +19,7 @@ export default function Generator() {
         await handleGenerator()
       }
     } catch (error) {
-      console.error('Error fetching random movie:', error)
+      console.error("Error fetching random movie:", error)
     } finally {
       setLoading(false)
     }
