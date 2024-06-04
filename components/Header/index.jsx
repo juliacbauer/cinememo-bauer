@@ -1,4 +1,4 @@
-import styles from "./header.module.css";
+import styles from "./Header.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -18,23 +18,23 @@ export default function Header(props) {
     <header className={styles.container}>
       {props.isLoggedIn ? (
         <>
-          <p>
-            <Link href="/">Home</Link>
-          </p>
           <div className={styles.container}>
-            <p>
+            <p className={styles.links}>
+              <Link href="/">Home</Link>
+            </p>
+            <p className={styles.links}>
               <Link href="/search">Search</Link>
             </p>
-            <p>
+            <p className={styles.links}>
               <Link href="/watch">Want to Watch</Link>
             </p>
-            <p>
+            <p className={styles.links}>
               <Link href="/watched">Watched</Link>
             </p>
-            <p>
-              <Link href="/faves">Favorites</Link>
+            <p className={styles.links}>
+              <Link href="/favorites">Favorites</Link>
             </p>
-            <p>
+            <p className={styles.links}>
               <Link href="/generator">Generator</Link>
             </p>
             <p onClick={handleLogout} style={{ cursor: "pointer" }}>
@@ -44,32 +44,17 @@ export default function Header(props) {
         </>
       ) : (
         <>
-          <p>
+          <p className={styles.links}>
             <Link href="/">Home</Link>
-          </p>
-          <p>
+          </p >
+          <p className={styles.links}>
             <Link href="/signup">Sign Up</Link>
           </p>
-          <p>
+          <p className={styles.links}>
             <Link href="/login">Login</Link>
-          </p>
-          <p>
-            <Link href="/search">Search</Link>
-          </p>
-          <p>
-            <Link href="/watch">Want to Watch</Link>
-          </p>
-          <p>
-            <Link href="/watched">Watched</Link>
-          </p>
-          <p>
-            <Link href="/favorites">Favorites</Link>
-          </p>
-          <p>
-            <Link href="/generator">Generator</Link>
           </p>
         </>
       )}
     </header>
-  )
+  );
 }

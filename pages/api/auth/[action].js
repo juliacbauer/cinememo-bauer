@@ -6,7 +6,7 @@ export default withIronSessionApiRoute(
   function handler(req, res) {
     if (req.method !== "POST")
       return res.status(404).end()
-    switch(req.query.action) {
+    switch (req.query.action) {
       case "login":
         return login(req, res)
       case "logout":
@@ -30,8 +30,8 @@ async function login(req, res) {
     }
     await req.session.save()
     res.status(200).end()
-  } catch(err) {
-    res.status(400).json({error: err.message})
+  } catch (err) {
+    res.status(400).json({ error: err.message })
   }
 }
 async function logout(req, res) {
@@ -40,16 +40,16 @@ async function logout(req, res) {
 }
 async function signup(req, res) {
   try {
-    const {username, password} = req.body
+    const { username, password } = req.body
     const user = await db.user.create(username, password)
-      req.session.user = {
+    req.session.user = {
       username: user.username,
       _id: user._id,
     }
     await req.session.save()
-    console.log("username:", username )
+    console.log("username:", username)
     res.redirect("/")
-  } catch(err) {
-    res.status(400).json({error: err.message})
+  } catch (err) {
+    res.status(400).json({ error: err.message })
   }
 }

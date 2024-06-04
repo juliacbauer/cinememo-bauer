@@ -3,8 +3,25 @@ import styles from "../styles/Generator.module.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import { withIronSessionSsr } from "iron-session/next";
+import sessionOptions from "../config/session";
 
-export default function Generator() {
+export const getServerSideProps = withIronSessionSsr(
+  async function getServerSideProps({ req }) {
+    const user = req.session.user;
+    const props = {};
+    if (user) {
+      props.user = req.session.user;
+      props.isLoggedIn = true;
+    } else {
+      props.isLoggedIn = false;
+    }
+    return { props };
+  },
+  sessionOptions
+);
+
+export default function Generator(props) {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(false);
   async function handleGenerator() {
@@ -28,7 +45,7 @@ export default function Generator() {
   return (
     <>
       <main>
-        <Header />
+        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1>Random Movie Generator</h1>
           <p>Desperate times call for desperate measures!</p>
@@ -54,5 +71,5 @@ export default function Generator() {
         <Footer />
       </main>
     </>
-  )
+  );
 }

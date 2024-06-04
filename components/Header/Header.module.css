@@ -4,3 +4,11 @@
     align-items: center;
     width: 100%;
 }
+
+.links > a {
+    text-decoration: none;
+}
+
+.links > a:visited {
+    color: inherit;
+}

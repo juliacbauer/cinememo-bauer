@@ -47,7 +47,7 @@ export default function Signup(props) {
   }
   return (
     <div>
-      <Header />
+      <Header isLoggedIn={props.isLoggedIn} />
       <main className={styles.main}>
         <h1>Sign Up</h1>
         <br />
@@ -80,7 +80,7 @@ export default function Signup(props) {
           {error && <p>{error}</p>}
         </form>
         <Link href="/login">
-          <p>Already have an account?</p>
+          <p>Already have an account? Login &rarr;</p>
         </Link>
         <Footer />
       </main>

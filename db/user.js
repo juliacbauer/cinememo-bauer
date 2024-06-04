@@ -10,7 +10,7 @@ export async function create(username, password) {
   const user = await User.create({username, password})
 
   if (!user)
-    throw new Error("Error creating User")
+    throw new Error("Error creating user")
 
   return user.toJSON()
 }

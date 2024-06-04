@@ -1,12 +1,29 @@
 import styles from "../styles/Login.module.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { withIronSessionSsr } from "iron-session/next";
+import sessionOptions from "../config/session";
 
-export default function Watched() {
+export const getServerSideProps = withIronSessionSsr(
+  async function getServerSideProps({ req }) {
+    const user = req.session.user;
+    const props = {};
+    if (user) {
+      props.user = req.session.user;
+      props.isLoggedIn = true;
+    } else {
+      props.isLoggedIn = false;
+    }
+    return { props };
+  },
+  sessionOptions
+);
+
+export default function Watched(props) {
   return (
     <>
       <main>
-        <Header />
+        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1>Watched</h1>
         </div>

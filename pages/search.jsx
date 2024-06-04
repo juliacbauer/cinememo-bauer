@@ -3,8 +3,25 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useState } from "react";
 import Link from "next/link";
+import { withIronSessionSsr } from "iron-session/next";
+import sessionOptions from "../config/session";
 
-export default function Search() {
+export const getServerSideProps = withIronSessionSsr(
+  async function getServerSideProps({ req }) {
+    const user = req.session.user;
+    const props = {};
+    if (user) {
+      props.user = req.session.user;
+      props.isLoggedIn = true;
+    } else {
+      props.isLoggedIn = false;
+    }
+    return { props };
+  },
+  sessionOptions
+);
+
+export default function Search(props) {
   const [query, setQuery] = useState("");
   const [movieInfo, setMovieInfo] = useState([]);
   const [searchPerformed, setSearchPerformed] = useState(false);
@@ -33,7 +50,7 @@ export default function Search() {
   return (
     <>
       <main>
-        <Header />
+        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1>Search</h1>
           <div>
