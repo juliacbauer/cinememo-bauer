@@ -1,8 +1,6 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI
-
-// src: https://github.com/vercel/next.js/blob/canary/examples/with-mongodb-mongoose/lib/dbConnect.js
+const MONGODB_URI = process.env.MONGODB_URI;
 
 let cached = global.mongoose
 
