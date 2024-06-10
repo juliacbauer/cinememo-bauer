@@ -8,15 +8,14 @@ import sessionOptions from "../config/session";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
-    const user = req.session.user;
-    const props = {};
+    const user = req.session.user
+    const props = {}
     if (user) {
-      props.user = req.session.user;
-      props.isLoggedIn = true;
+      props.isLoggedIn = true
     } else {
-      props.isLoggedIn = false;
+      props.isLoggedIn = false
     }
-    return { props };
+    return { props }
   },
   sessionOptions
 );
