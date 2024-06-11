@@ -15,7 +15,7 @@ export default withIronSessionApiRoute(
           const movie = req.body
           const addedMovie = await db.watched.addToWatched(userId, movie)
           console.log("Added:", addedMovie)
-          return res.status(200).json({ movie: addedMovie, message: "Movie added" })
+          return res.status(200).json({ movie: addedMovie, message: "Movie added to watched list" })
         } catch (error) {
           return res.status(400).json({ error: error.message })
         }
