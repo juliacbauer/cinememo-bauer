@@ -54,18 +54,7 @@ export default function MovieInfo(props) {
         imdbID: movieInfo.imdbID,
         title: movieInfo.Title,
         year: parseInt(movieInfo.Year, 10),
-        poster: movieInfo.Poster,
-        filmType: movieInfo.Type,
-        genres: movieInfo.Genre,
-        runtime: movieInfo.Runtime,
-        actors: movieInfo.Actors,
-        plot: movieInfo.Plot,
-        rated: movieInfo.Rated,
-        directors: movieInfo.Director,
-        ratings: movieInfo.Ratings.map(rating => ({
-          source: rating.Source,
-          value: rating.Value
-        })),
+        poster: movieInfo.Poster
       }),
     })
     if (res.status === 200) {
@@ -86,18 +75,7 @@ export default function MovieInfo(props) {
         imdbID: movieInfo.imdbID,
         title: movieInfo.Title,
         year: parseInt(movieInfo.Year, 10),
-        poster: movieInfo.Poster,
-        filmType: movieInfo.Type,
-        genres: movieInfo.Genre,
-        runtime: movieInfo.Runtime,
-        actors: movieInfo.Actors,
-        plot: movieInfo.Plot,
-        rated: movieInfo.Rated,
-        directors: movieInfo.Director,
-        ratings: movieInfo.Ratings.map(rating => ({
-          source: rating.Source,
-          value: rating.Value
-        })),
+        poster: movieInfo.Poster
       }),
     })
     if (res.status === 200) {
@@ -118,18 +96,7 @@ export default function MovieInfo(props) {
         imdbID: movieInfo.imdbID,
         title: movieInfo.Title,
         year: parseInt(movieInfo.Year, 10),
-        poster: movieInfo.Poster,
-        filmType: movieInfo.Type,
-        genres: movieInfo.Genre,
-        runtime: movieInfo.Runtime,
-        actors: movieInfo.Actors,
-        plot: movieInfo.Plot,
-        rated: movieInfo.Rated,
-        directors: movieInfo.Director,
-        ratings: movieInfo.Ratings.map(rating => ({
-          source: rating.Source,
-          value: rating.Value
-        })),
+        poster: movieInfo.Poster
       }),
     })
     if (res.status === 200) {

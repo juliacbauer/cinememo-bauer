@@ -8,18 +8,7 @@ const movieSchema = new Schema({
     },
     title: String,
     year: Number,
-    poster: String,
-    filmType: String,
-    genres: String,
-    runtime: String,
-    actors: String,
-    plot: String,
-    rated: String,
-    directors: String,
-    ratings: [{
-        source: String,
-        value: String
-    }],
+    poster: String
 });
 
 export default movieSchema;
