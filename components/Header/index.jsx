@@ -23,6 +23,9 @@ export default function Header(props) {
               <Link href="/">Home</Link>
             </p>
             <p className={styles.links}>
+              <Link href="/dashboard">Dashboard</Link>
+            </p>
+            <p className={styles.links}>
               <Link href="/search">Search</Link>
             </p>
             <p className={styles.links}>

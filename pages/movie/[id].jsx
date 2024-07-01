@@ -160,7 +160,7 @@ export default function MovieInfo(props) {
               <h1>{movieInfo.Title}</h1>
               <img src={movieInfo.Poster} alt="Movie Poster" />
               <p>{movieInfo.Year}</p>
-              <p>Genres: {movieInfo.Genre}</p>
+              <p>{movieInfo.Type && movieInfo.Type.charAt(0).toUpperCase() + movieInfo.Type.slice(1)}</p>              <p>Genres: {movieInfo.Genre}</p>
               <p>Plot Summary: {movieInfo.Plot}</p>
               <p>Cast: {movieInfo.Actors}</p>
               <p>IMDb Rating: {movieInfo.imdbRating}</p>
