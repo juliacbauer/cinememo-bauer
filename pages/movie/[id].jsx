@@ -4,18 +4,30 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../../config/session";
+import db from "../../db";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
     const user = req.session.user
     const props = {}
+    const watch = await db.watch.getWatch(user._id)
+    const watched = await db.watched.getWatched(user._id)
+    const favorites = await db.favorites.getFavorites(user._id)
     if (user) {
       props.user = req.session.user
       props.isLoggedIn = true
     } else {
       props.isLoggedIn = false
     }
-    return { props }
+    return {
+      props: {
+        user: req.session.user,
+        isLoggedIn: true,
+        watchList: watch,
+        watchedList: watched,
+        favoritesList: favorites,
+      }
+    }
   },
   sessionOptions
 );
@@ -23,7 +35,8 @@ export const getServerSideProps = withIronSessionSsr(
 export default function MovieInfo(props) {
   const router = useRouter();
   const { id } = router.query;
-  const [movieInfo, setMovieInfo] = useState([]);
+  const [movieInfo, setMovieInfo] = useState(null);
+  const { watchList, watchedList, favoritesList } = props;
   async function handleInfo(imdbId) {
     try {
       const res = await fetch(
@@ -41,6 +54,10 @@ export default function MovieInfo(props) {
       handleInfo(id)
     }
   }, [id])
+
+  const inWatchList = watchList.find(movie => movie.imdbID === id);
+  const inWatchedList = watchedList.find(movie => movie.imdbID === id);
+  const inFavoritesList = favoritesList.find(movie => movie.imdbID === id);
 
   async function addToWatch(e) {
     e.preventDefault()
@@ -164,22 +181,22 @@ export default function MovieInfo(props) {
               <p>Plot Summary: {movieInfo.Plot}</p>
               <p>Cast: {movieInfo.Actors}</p>
               <p>IMDb Rating: {movieInfo.imdbRating}</p>
+              {!inWatchList && <button onClick={addToWatch}>
+                Add to Watch</button>}
+              {!inWatchedList && <button onClick={addToWatched}>
+                Add to Watched</button>}
+              {!inFavoritesList && <button onClick={addToFavorites}>
+                Add to Favorites</button>}
+              {inWatchList && <button onClick={() => removeWatchMovie(movieInfo)}>
+                Remove from watch</button>}
+              {inWatchedList && <button onClick={() => removeWatchedMovie(movieInfo)}>
+                Remove from watched</button>}
+              {inFavoritesList && <button onClick={() => removeFavoriteMovie(movieInfo)}>
+                Remove from favorites</button>}
             </>
-          ) : id ? (
+          ) : (
             <p>Loading...</p>
-          ) : null}
-          <button onClick={addToWatch}>
-            Add to Watch</button>
-          <button onClick={addToWatched}>
-            Add to Watched</button>
-          <button onClick={addToFavorites}>
-            Add to Favorites</button>
-          <button onClick={() => removeWatchMovie(movieInfo)}>
-            Remove from watch</button>
-          <button onClick={() => removeWatchedMovie(movieInfo)}>
-            Remove from watched</button>
-          <button onClick={() => removeFavoriteMovie(movieInfo)}>
-            Remove from favorites</button>
+          )}
         </div>
         <Footer />
       </main>
