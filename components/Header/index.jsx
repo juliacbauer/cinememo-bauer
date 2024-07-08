@@ -23,15 +23,19 @@ export default function Header(props) {
     <header className={styles.container}>
       {props.isLoggedIn ? (
         <>
-          <div className={styles.container}>
+          <div className={styles.logoLeft}>
             <p className={styles.links}>
               <Link href="/">Home</Link>
             </p>
+          </div>
+          <div className={styles.rightLinks}>
             <p className={styles.links}>
               <Link href="/search">Search</Link>
             </p>
             <div className={styles.links} onClick={onClickLists} style={{ cursor: "pointer" }}>
-              My Lists
+              <p>
+                My Lists
+              </p>
               {displayLists && (
                 <div className={styles.displayLists}>
                   <p><Link href="/watch">Want to Watch</Link></p>
@@ -50,15 +54,19 @@ export default function Header(props) {
         </>
       ) : (
         <>
-          <p className={styles.links}>
-            <Link href="/">Home</Link>
-          </p >
-          <p className={styles.links}>
-            <Link href="/signup">Sign Up</Link>
-          </p>
-          <p className={styles.links}>
-            <Link href="/login">Login</Link>
-          </p>
+          <div className={styles.logoLeft}>
+            <p className={styles.links}>
+              <Link href="/">Home</Link>
+            </p >
+          </div>
+          <div className={styles.rightLinks}>
+            <p className={styles.links}>
+              <Link href="/signup">Sign Up</Link>
+            </p>
+            <p className={styles.links}>
+              <Link href="/login">Login</Link>
+            </p>
+          </div>
         </>
       )}
     </header>
