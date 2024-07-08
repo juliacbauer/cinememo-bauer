@@ -5,11 +5,11 @@
     width: 100%;
 }
 
-.links>a {
+.links > a {
     text-decoration: none;
 }
 
-.links>a:visited {
+.links > a:visited {
     color: inherit;
 }
 

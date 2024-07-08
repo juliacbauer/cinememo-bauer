@@ -38,9 +38,9 @@ export default function Header(props) {
               </p>
               {displayLists && (
                 <div className={styles.displayLists}>
-                  <p><Link href="/watch">Want to Watch</Link></p>
-                  <p><Link href="/watched">Watched</Link></p>
-                  <p><Link href="/favorites">Favorites</Link></p>
+                  <p className={styles.links}><Link href="/watch">Want to Watch</Link></p>
+                  <p className={styles.links}><Link href="/watched">Watched</Link></p>
+                  <p className={styles.links}><Link href="/favorites">Favorites</Link></p>
                 </div>
               )}
             </div>
