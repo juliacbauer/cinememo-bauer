@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import styles from "./Movie.module.css"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { withIronSessionSsr } from "iron-session/next";
@@ -171,7 +172,7 @@ export default function MovieInfo(props) {
     <>
       <main>
         <Header isLoggedIn={props.isLoggedIn} />
-        <div>
+        <div className={styles.idMain}>
           {movieInfo ? (
             <>
               <h1>{movieInfo.Title}</h1>
