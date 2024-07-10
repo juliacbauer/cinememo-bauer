@@ -1,4 +1,4 @@
-//import styles from "../styles/Login.module.css";
+import styles from "../styles/Search.module.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { withIronSessionSsr } from "iron-session/next";
@@ -30,12 +30,12 @@ export const getServerSideProps = withIronSessionSsr(
 export default function Watched(props) {
   return (
     <>
-      <main>
+      <main className={styles.main}>
         <Header isLoggedIn={props.isLoggedIn} />
         <div>
           <h1>Watched</h1>
           {props.watchedList.length > 0 ? (
-            <div>
+            <div className={styles.searchResults}>
               {props.watchedList.map(movie => (
                 <div key={movie._id}>
                   <h2>{movie.title}</h2>

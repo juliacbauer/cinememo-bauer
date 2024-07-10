@@ -1,4 +1,4 @@
-//import styles from "../styles/Login.module.css";
+import styles from "../styles/Search.module.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { withIronSessionSsr } from "iron-session/next";
@@ -32,14 +32,17 @@ export default function Watch(props) {
     <>
       <main>
         <Header isLoggedIn={props.isLoggedIn} />
-        <div>
+        <div className={styles.main}>
           <h1>To Watch</h1>
           {props.watchList.length > 0 ? (
-            <div>
+            <div className={styles.searchResults}>
               {props.watchList.map(movie => (
                 <div key={movie._id}>
-                  <h2>{movie.title}</h2>
-                  <p>Year: {movie.year}</p>
+                  <div className={styles.links}>
+                  <Link href={`/movie/${movie.imdbID}`}>
+                  <h2>{movie.title} ({movie.year})</h2>
+                  </Link>
+                  </div>
                   <Link href={`/movie/${movie.imdbID}`}>
                       <img src={movie.poster} alt="Movie poster" />
                   </Link>

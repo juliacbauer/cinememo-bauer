@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
 import db from "../db";
+import Link from "next/link";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -37,18 +38,28 @@ export default function Home(props) {
         <div className={styles.main}>
           {props.isLoggedIn ? (
             <>
-              <h1>User Dashboard</h1>
+              <h1>Welcome {props.user.username}!</h1>
               <div>
-                <p>Hi {props.user.username}!</p>
-                <p>Movies in Watch List: {props.watchList.length}</p>
-                <p>Movies in Watched List: {props.watchedList.length}</p>
+                <p>Watch List: {props.watchList.length}</p>
+                <p>Watched List: {props.watchedList.length}</p>
                 <p>Favorites: {props.favoritesList.length}</p>
               </div>
             </>
           ) : (
             <>
               <h1>Welcome to Cinememo!</h1>
-              <p>Log in or sign up to get started!</p>
+              <div className={styles.buttonDiv}>
+                <Link href="/login">
+                  <button className={styles.buttons} style={{ cursor: "pointer" }}>
+                    Log in
+                  </button>
+                </Link>
+                <Link href="/signup">
+                  <button className={styles.buttons} style={{ cursor: "pointer" }}>
+                    Sign up
+                  </button>
+                </Link>
+              </div>
             </>
           )}
         </div>

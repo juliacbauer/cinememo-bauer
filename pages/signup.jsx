@@ -1,4 +1,4 @@
-import styles from "../styles/Generator.module.css";
+import styles from "../styles/Login.module.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useState } from "react";
@@ -48,40 +48,49 @@ export default function Signup(props) {
   return (
     <div>
       <Header isLoggedIn={props.isLoggedIn} />
-      <main className={styles.main}>
-        <h1>Sign Up</h1>
-        <br />
-        <form onSubmit={createAccount}>
-          <label htmlFor="username">Username: </label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            onChange={handleChange}
-            value={username}
-          />
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={handleChange}
-            value={password}
-          />
-          <label htmlFor="reenter-password">Re-enter Password: </label>
-          <input
-            type="password"
-            name="reenter-password"
-            id="reenter-password"
-            onChange={handleChange}
-            value={reenterPassword}
-          />
-          <button>Sign Up</button>
-          {error && <p>{error}</p>}
-        </form>
-        <Link href="/login">
-          <p>Already have an account? Login &rarr;</p>
-        </Link>
+      <main>
+        <div className={styles.main}>
+          <h1>Sign Up</h1>
+          <br />
+          <form className={styles.form} onSubmit={createAccount}>
+            <input
+              placeholder="Username"
+              type="text"
+              name="username"
+              id="username"
+              onChange={handleChange}
+              value={username}
+            />
+            <br />
+            <input
+              placeholder="Password"
+              type="password"
+              name="password"
+              id="password"
+              onChange={handleChange}
+              value={password}
+            />
+            <br />
+            <input
+              placeholder="Confirm password"
+              type="password"
+              name="reenter-password"
+              id="reenter-password"
+              onChange={handleChange}
+              value={reenterPassword}
+            />
+            <br />
+            <button style={{ cursor: "pointer" }}>Sign Up</button>
+            {error && <p>{error}</p>}
+          </form>
+          <br />
+          <br />
+          <Link href="/login">
+            <button style={{ cursor: "pointer" }}>
+              Log in instead &rarr;
+            </button>
+          </Link>
+        </div>
         <Footer />
       </main>
     </div>

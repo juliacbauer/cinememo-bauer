@@ -51,34 +51,41 @@ export default function Login(props) {
   }
   return (
     <>
-      <main className={styles.mainLogin}>
+      <main>
         <Header isLoggedIn={props.isLoggedIn} />
-        <h1>Login</h1>
-        <br />
-        <form onSubmit={handleLogin}>
-          <label htmlFor="username">Username: </label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            onChange={handleChange}
-            value={username}
-          />
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={handleChange}
-            value={password}
-          />
-          <button>Login</button>
-          {error && <p>{error}</p>}
-        </form>
-        <br />
-        <Link href="/signup">
-          <p>Don't have an account? Sign up now! &rarr;</p>
-        </Link>
+        <div className={styles.main}>
+          <h1>Login</h1>
+          <br />
+          <form className={styles.form} onSubmit={handleLogin}>
+            <input
+              placeholder="Username"
+              type="text"
+              name="username"
+              id="username"
+              onChange={handleChange}
+              value={username}
+            />
+            <br />
+            <input
+              placeholder="Password"
+              type="password"
+              name="password"
+              id="password"
+              onChange={handleChange}
+              value={password}
+            />
+            <br />
+            <button>Login</button>
+            {error && <p>{error}</p>}
+          </form>
+          <br />
+          <br />
+          <Link href="/signup">
+            <button style={{ cursor: "pointer" }}>
+              Sign up instead &rarr;
+            </button>
+          </Link>
+        </div>
         <Footer />
       </main>
     </>

@@ -1,3 +1,22 @@
 .idMain {
+    margin-top: 50px;
     min-height: 100vh;
+    text-align: center;
+}
+
+.plot {
+    text-align: left;
+    width: 700px;
+    margin: auto;
+}
+
+.idButtonDiv {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;     
+}
+
+.idButtons {
+    width: 150px; 
 }

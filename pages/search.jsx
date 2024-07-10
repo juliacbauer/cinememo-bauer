@@ -25,10 +25,12 @@ export default function Search(props) {
   const [query, setQuery] = useState("");
   const [movieInfo, setMovieInfo] = useState([]);
   const [searchPerformed, setSearchPerformed] = useState(false);
+  const [loading, setLoading] = useState(false);
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
     setSearchPerformed(true)
+    setLoading(true)
     try {
       const res = await fetch(
         `https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&s=${query}`
@@ -45,6 +47,7 @@ export default function Search(props) {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
+    setLoading(false)
   }
 
   return (
@@ -52,7 +55,9 @@ export default function Search(props) {
       <main>
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
-          <h1>Search</h1>
+          <h1>Discover</h1>
+          <p>Explore endless movies and TV shows.</p>
+          <br />
           <div>
             <form onSubmit={handleSubmit}>
               <input
@@ -68,26 +73,36 @@ export default function Search(props) {
           </div>
           <div>
             {!searchPerformed && (
-              <p>Search by keyword and view the first 10 movie and TV show results.</p>
+              <br />
             )}
-            {searchPerformed && movieInfo && movieInfo.length === 0 && (
+            {searchPerformed && loading && (
+              <p>Loading...</p>
+            )}
+            {searchPerformed && !loading && movieInfo.length === 0 && (
               <p>No movies or shows found.</p>
             )}
-            {movieInfo && movieInfo.length > 0 && (
-              movieInfo.map((movie) => (
-                <div key={movie.imdbID}>
-                  <h3>{movie.Title}</h3>
-                  <p>{movie.Year}</p>
-                  {movie.Poster !== "N/A" ? (
-                    <Link href={`/movie/${movie.imdbID}`}>
-                      <img src={movie.Poster} alt="Movie Poster" />
-                    </Link>
-                  ) : (
-                    <p>Poster unavailable.</p>
-                  )}
-                </div>
-              ))
-            )}
+            <div className={styles.searchResults}>
+              {movieInfo && movieInfo.length > 0 && (
+                movieInfo.map((movie) => (
+                  <div key={movie.imdbID}>
+                    <br />
+                    <br />
+                    {movie.Poster !== "N/A" ? (
+                      <Link href={`/movie/${movie.imdbID}`}>
+                        <img src={movie.Poster} alt="Movie Poster" />
+                      </Link>
+                    ) : (
+                      <p>Poster unavailable.</p>
+                    )}
+                    <div className={styles.links}>
+                      <Link href={`/movie/${movie.imdbID}`}>
+                        <h2>{movie.Title} ({movie.Year})</h2>
+                      </Link>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
         <Footer />

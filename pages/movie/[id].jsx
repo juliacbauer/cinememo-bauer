@@ -175,25 +175,29 @@ export default function MovieInfo(props) {
         <div className={styles.idMain}>
           {movieInfo ? (
             <>
-              <h1>{movieInfo.Title}</h1>
+              <h1>{movieInfo.Title} ({movieInfo.Year})</h1>
               <img src={movieInfo.Poster} alt="Movie Poster" />
-              <p>{movieInfo.Year}</p>
-              <p>{movieInfo.Type && movieInfo.Type.charAt(0).toUpperCase() + movieInfo.Type.slice(1)}</p>              <p>Genres: {movieInfo.Genre}</p>
-              <p>Plot Summary: {movieInfo.Plot}</p>
-              <p>Cast: {movieInfo.Actors}</p>
-              <p>IMDb Rating: {movieInfo.imdbRating}</p>
-              {!inWatchList && <button onClick={addToWatch}>
-                Add to Watch</button>}
-              {!inWatchedList && <button onClick={addToWatched}>
-                Add to Watched</button>}
-              {!inFavoritesList && <button onClick={addToFavorites}>
-                Add to Favorites</button>}
-              {inWatchList && <button onClick={() => removeWatchMovie(movieInfo)}>
-                Remove from watch</button>}
-              {inWatchedList && <button onClick={() => removeWatchedMovie(movieInfo)}>
-                Remove from watched</button>}
-              {inFavoritesList && <button onClick={() => removeFavoriteMovie(movieInfo)}>
-                Remove from favorites</button>}
+              <br />
+              <br />
+              <p>{movieInfo.Type && movieInfo.Type.charAt(0).toUpperCase() + movieInfo.Type.slice(1)} | {movieInfo.Genre} | IMDb Rating: {movieInfo.imdbRating}</p>
+              <p>Featuring {movieInfo.Actors}</p>
+              <p className={styles.plot}>{movieInfo.Plot}</p>
+              <br />
+              <br />
+              <div className={styles.idButtonDiv}>
+                {!inWatchList && <button className={styles.idButtons} onClick={addToWatch}>
+                  Add to Watch</button>}
+                {!inWatchedList && <button className={styles.idButtons} onClick={addToWatched}>
+                  Add to Watched</button>}
+                {!inFavoritesList && <button className={styles.idButtons} onClick={addToFavorites}>
+                  Add to Favorites</button>}
+                {inWatchList && <button className={styles.idButtons} onClick={() => removeWatchMovie(movieInfo)}>
+                  Remove from watch</button>}
+                {inWatchedList && <button className={styles.idButtons} onClick={() => removeWatchedMovie(movieInfo)}>
+                  Remove from watched</button>}
+                {inFavoritesList && <button className={styles.idButtons} onClick={() => removeFavoriteMovie(movieInfo)}>
+                  Remove from favorites</button>}
+              </div>
             </>
           ) : (
             <p>Loading...</p>
