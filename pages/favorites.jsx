@@ -31,9 +31,9 @@ export const getServerSideProps = withIronSessionSsr(
 export default function Faves(props) {
   return (
     <>
-      <main className={styles.main}>
+      <main>
         <Header isLoggedIn={props.isLoggedIn} />
-        <div>
+        <div className={styles.main}>
           <h1>Faves</h1>
           {props.favoritesList.length > 0 ? (
             <div className={styles.searchResults}>

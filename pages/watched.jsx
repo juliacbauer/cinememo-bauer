@@ -30,9 +30,9 @@ export const getServerSideProps = withIronSessionSsr(
 export default function Watched(props) {
   return (
     <>
-      <main className={styles.main}>
+      <main>
         <Header isLoggedIn={props.isLoggedIn} />
-        <div>
+        <div className={styles.main}>
           <h1>Watched</h1>
           {props.watchedList.length > 0 ? (
             <div className={styles.searchResults}>
