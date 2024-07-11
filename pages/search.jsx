@@ -59,7 +59,7 @@ export default function Search(props) {
           <p>Explore endless movies and TV shows.</p>
           <br />
           <div>
-            <form onSubmit={handleSubmit}>
+            <form className={styles.searchBarDiv} onSubmit={handleSubmit}>
               <input
                 placeholder="Search by keyword"
                 value={query}
@@ -81,6 +81,7 @@ export default function Search(props) {
             {searchPerformed && !loading && movieInfo.length === 0 && (
               <p>No movies or shows found.</p>
             )}
+            <br />
             <div className={styles.searchResults}>
               {movieInfo && movieInfo.length > 0 && (
                 movieInfo.map((movie) => (

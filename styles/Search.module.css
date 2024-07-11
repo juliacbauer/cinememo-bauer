@@ -1,7 +1,7 @@
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     text-align: center;
@@ -39,4 +39,10 @@
 
 .searchResults img {
     height: 400px;
+}
+
+.searchBarDiv {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
