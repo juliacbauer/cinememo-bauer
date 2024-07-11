@@ -7,7 +7,54 @@
     text-align: center;
 }
 
-.links > a {
+.links>a {
     text-decoration: none;
     color: inherit;
+}
+
+@media (max-width: 500px) {
+    .main {
+        min-height: 75vh;
+    }
+
+    .main>h1 {
+        font-size: 1.5rem;
+    }
+
+    .links>a>h2 {
+        font-size: 1.2rem;
+    }
+
+    .mobileImg {
+        width: 300px;
+        height: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobileImg {
+        width: 250px;
+        height: auto;
+    }
+}
+
+@media (max-width: 350px) {
+    .main>h1 {
+        font-size: 1.2rem;
+    }
+
+    .main {
+        font-size: .9rem;
+    }
+}
+
+@media (max-width: 315px) {
+    .mobileImg {
+        width: 200px;
+        height: auto;
+    }
+
+    .main {
+        font-size: .8rem;
+    }
 }

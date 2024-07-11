@@ -47,7 +47,7 @@ export default function Header(props) {
             <p className={styles.links}>
               <Link href="/generator">Generator</Link>
             </p>
-            <p onClick={handleLogout} style={{ cursor: "pointer" }}>
+            <p className={styles.links} onClick={handleLogout} style={{ cursor: "pointer" }}>
               Logout
             </p>
           </div>

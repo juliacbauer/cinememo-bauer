@@ -14,9 +14,77 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    width: 500px;     
+    width: 500px;
 }
 
 .idButtons {
-    width: 150px; 
+    width: 150px;
+}
+
+@media (max-width: 750px) {
+    .plot {
+        width: 500px;
+    }
+
+    .idMain>h1 {
+        font-size: 1.5rem;
+    }
+
+    .idButtonDiv {
+        width: 350px;
+    }
+
+    .idButtons {
+        width: 100px;
+    }
+
+    .idMain img {
+        width: 250px;
+        height: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .plot {
+        width: 400px;
+    }
+
+    .idMain>h1 {
+        font-size: 1.3rem;
+    }
+
+    .idButtons {
+        width: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .plot {
+        width: 250px;
+    }
+
+    .idMain>h1 {
+        font-size: 1.2rem;
+    }
+
+    .idMain {
+        font-size: .85rem;
+    }
+
+    .idButtons {
+        width: 100px;
+    }
+
+    .idButtonDiv {
+        width: 230px;
+    }
+
+    .idButtons {
+        width: 70px;
+    }
+
+    .idMain img {
+        width: 230px;
+        height: auto;
+    }
 }

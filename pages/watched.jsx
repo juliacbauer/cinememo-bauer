@@ -33,7 +33,7 @@ export default function Watched(props) {
       <main>
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
-          <h1>Watched</h1>
+          <h1 className={styles.listTitles}>Watched</h1>
           <br />
           <br />
           {props.watchedList.length > 0 ? (

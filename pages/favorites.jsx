@@ -34,7 +34,7 @@ export default function Faves(props) {
       <main>
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
-          <h1>Faves</h1>
+          <h1 className={styles.listTitles}>Faves</h1>
           <br />
           <br />
           {props.favoritesList.length > 0 ? (

@@ -86,11 +86,6 @@ export default function Search(props) {
               {movieInfo && movieInfo.length > 0 && (
                 movieInfo.map((movie) => (
                   <div key={movie.imdbID}>
-                    <div className={styles.links}>
-                      <Link href={`/movie/${movie.imdbID}`}>
-                        <h2>{movie.Title} ({movie.Year})</h2>
-                      </Link>
-                    </div>
                     {movie.Poster !== "N/A" ? (
                       <Link href={`/movie/${movie.imdbID}`}>
                         <img src={movie.Poster} alt="Movie Poster" />

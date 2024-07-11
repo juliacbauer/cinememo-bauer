@@ -33,7 +33,7 @@ export default function Watch(props) {
       <main>
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
-          <h1>To Watch</h1>
+          <h1 className={styles.listTitles}>To Watch</h1>
           <br />
           <br />
           {props.watchList.length > 0 ? (
@@ -41,7 +41,7 @@ export default function Watch(props) {
               {props.watchList.map(movie => (
                 <div key={movie._id}>
                   <Link href={`/movie/${movie.imdbID}`}>
-                      <img src={movie.poster} alt="Movie poster" />
+                    <img src={movie.poster} alt="Movie poster" />
                   </Link>
                 </div>
               ))}
