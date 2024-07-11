@@ -38,10 +38,13 @@ export default function Watched(props) {
             <div className={styles.searchResults}>
               {props.watchedList.map(movie => (
                 <div key={movie._id}>
-                  <h2>{movie.title}</h2>
-                  <p>Year: {movie.year}</p>
+                  <div className={styles.links}>
+                    <Link href={`/movie/${movie.imdbID}`}>
+                      <h2>{movie.title} ({movie.year})</h2>
+                    </Link>
+                  </div>
                   <Link href={`/movie/${movie.imdbID}`}>
-                      <img src={movie.poster} alt="Movie poster" />
+                    <img src={movie.poster} alt="Movie poster" />
                   </Link>
                 </div>
               ))}

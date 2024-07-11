@@ -7,9 +7,11 @@
     text-align: center;
 }
 
-.searchResults {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.links {
+    text-align: center;
+    margin-top: auto;
+    padding: 10px 0;
+    width: 100%;
 }
 
 .links > a {
@@ -19,4 +21,22 @@
 
 .links > a:visited {
     color: inherit;
+}
+
+.searchResults {
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+.searchResults > div {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.searchResults img {
+    height: 400px;
 }
