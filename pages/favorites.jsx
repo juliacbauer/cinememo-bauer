@@ -35,15 +35,12 @@ export default function Faves(props) {
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1>Faves</h1>
+          <br />
+          <br />
           {props.favoritesList.length > 0 ? (
             <div className={styles.searchResults}>
               {props.favoritesList.map(movie => (
                 <div key={movie._id}>
-                  <div className={styles.links}>
-                    <Link href={`/movie/${movie.imdbID}`}>
-                      <h2>{movie.title} ({movie.year})</h2>
-                    </Link>
-                  </div>
                   <Link href={`/movie/${movie.imdbID}`}>
                     <img src={movie.poster} alt="Movie poster" />
                   </Link>

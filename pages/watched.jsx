@@ -34,15 +34,12 @@ export default function Watched(props) {
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1>Watched</h1>
+          <br />
+          <br />
           {props.watchedList.length > 0 ? (
             <div className={styles.searchResults}>
               {props.watchedList.map(movie => (
                 <div key={movie._id}>
-                  <div className={styles.links}>
-                    <Link href={`/movie/${movie.imdbID}`}>
-                      <h2>{movie.title} ({movie.year})</h2>
-                    </Link>
-                  </div>
                   <Link href={`/movie/${movie.imdbID}`}>
                     <img src={movie.poster} alt="Movie poster" />
                   </Link>

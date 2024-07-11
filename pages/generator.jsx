@@ -56,8 +56,11 @@ export default function Generator(props) {
           ) : (
             movie && (
               <div>
-                <h2>{movie.Title}</h2>
-                <p>{movie.Year}</p>
+                <div className={styles.links}>
+                <Link href={`/movie/${movie.imdbID}`}>
+                <h2>{movie.Title} ({movie.Year})</h2>
+                </Link>
+                </div>
                 <Link href={`/movie/${movie.imdbID}`}>
                   <img src={movie.Poster} alt="Movie Poster" />
                 </Link>
