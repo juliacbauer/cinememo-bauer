@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../../config/session";
 import db from "../../db";
+import Link from "next/link";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -174,31 +175,40 @@ export default function MovieInfo(props) {
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.idMain}>
           {movieInfo ? (
-            <>
-              <h1>{movieInfo.Title} ({movieInfo.Year})</h1>
-              <img src={movieInfo.Poster} alt="Movie Poster" />
-              <br />
-              <br />
-              <p>{movieInfo.Type && movieInfo.Type.charAt(0).toUpperCase() + movieInfo.Type.slice(1)} | {movieInfo.Genre} | IMDb Rating: {movieInfo.imdbRating}</p>
-              <p>Featuring {movieInfo.Actors}</p>
-              <p className={styles.plot}>{movieInfo.Plot}</p>
-              <br />
-              <br />
-              <div className={styles.idButtonDiv}>
-                {!inWatchList && <button className={styles.idButtons} onClick={addToWatch}>
-                  Add to Watch</button>}
-                {!inWatchedList && <button className={styles.idButtons} onClick={addToWatched}>
-                  Add to Watched</button>}
-                {!inFavoritesList && <button className={styles.idButtons} onClick={addToFavorites}>
-                  Add to Favorites</button>}
-                {inWatchList && <button className={styles.idButtons} onClick={() => removeWatchMovie(movieInfo)}>
-                  Remove from watch</button>}
-                {inWatchedList && <button className={styles.idButtons} onClick={() => removeWatchedMovie(movieInfo)}>
-                  Remove from watched</button>}
-                {inFavoritesList && <button className={styles.idButtons} onClick={() => removeFavoriteMovie(movieInfo)}>
-                  Remove from favorites</button>}
+            <div className={styles.posterLeft}>
+              <img className={styles.poster} src={movieInfo.Poster} alt="Movie Poster" />
+              <div className={styles.infoRight}>
+                <h1>{movieInfo.Title} ({movieInfo.Year})</h1>
+                <p>{movieInfo.Type && movieInfo.Type.charAt(0).toUpperCase() + movieInfo.Type.slice(1)} | {movieInfo.Genre} | IMDb Rating: {movieInfo.imdbRating}</p>
+                <p>Featuring {movieInfo.Actors}</p>
+                <p className={styles.plot}>{movieInfo.Plot}</p>
+                <br />
+                <div className={styles.idButtonDiv}>
+                  {!inWatchList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={addToWatch}>
+                    Watch</button>}
+                  {inWatchList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={() => removeWatchMovie(movieInfo)}>
+                    Remove</button>}
+                  {!inWatchedList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={addToWatched}>
+                    Seen</button>}
+                  {inWatchedList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={() => removeWatchedMovie(movieInfo)}>
+                    Remove</button>}
+                  {!inFavoritesList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={addToFavorites}>
+                    Favorites</button>}
+                  {inFavoritesList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={() => removeFavoriteMovie(movieInfo)}>
+                    Remove</button>}
+                </div>
+                <br />
+                <br />
+                <div className={styles.idSearchButtonDiv}>
+                  <Link href="/search">
+                    <p style={{ cursor: "pointer" }}>Discover</p>
+                  </Link>
+                  <Link href="/search">
+                    <p style={{ cursor: "pointer" }}>Randomize</p>
+                  </Link>
+                </div>
               </div>
-            </>
+            </div>
           ) : (
             <p>Loading...</p>
           )}

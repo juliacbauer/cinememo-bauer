@@ -38,14 +38,14 @@ export default function Header(props) {
               </p>
               {displayLists && (
                 <div className={styles.displayLists}>
-                  <p className={styles.links}><Link href="/watch">Want to Watch</Link></p>
-                  <p className={styles.links}><Link href="/watched">Watched</Link></p>
+                  <p className={styles.links}><Link href="/watch">Watch</Link></p>
+                  <p className={styles.links}><Link href="/watched">Seen</Link></p>
                   <p className={styles.links}><Link href="/favorites">Favorites</Link></p>
                 </div>
               )}
             </div>
             <p className={styles.links}>
-              <Link href="/generator">Generator</Link>
+              <Link href="/generator">Randomize</Link>
             </p>
             <p className={styles.links} onClick={handleLogout} style={{ cursor: "pointer" }}>
               Logout

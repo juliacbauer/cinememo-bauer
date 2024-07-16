@@ -1,24 +1,73 @@
 .idMain {
-    margin-top: 50px;
+    margin-top: 100px;
     min-height: 100vh;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }
 
 .plot {
-    text-align: center;
-    width: 700px;
-    margin: auto;
+    text-align: left;
+    width: 450px;
 }
 
 .idButtonDiv {
-    margin: auto;
     display: flex;
     justify-content: space-between;
-    width: 500px;
+    width: 300px;
 }
 
 .idButtons {
-    width: 150px;
+    width: 80px;
+}
+
+.posterLeft {
+    display: flex;
+    gap: 50px;
+}
+
+.infoRight {
+    max-width: 450px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.poster {
+    width: 350px;
+    height: auto;
+}
+
+.idSearchButtonDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+}
+
+@media (max-width: 900px) {
+    .posterLeft {
+        margin-top: -40px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .infoRight {
+        text-align: center;
+        margin-top: -40px;
+    }
+
+    .idButtonDiv {
+        align-self: center;
+    }
+
+    .plot {
+        text-align: center;
+    }
+
+    .idSearchButtonDiv {
+        align-self: center;
+    }
 }
 
 @media (max-width: 750px) {
@@ -37,14 +86,9 @@
     .idButtons {
         width: 100px;
     }
-
-    .idMain img {
-        width: 250px;
-        height: auto;
-    }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 570px) {
     .plot {
         width: 400px;
     }
@@ -58,9 +102,16 @@
     }
 }
 
+@media (max-width: 530px) {
+    .poster {
+        width: 300px;
+        height: auto;
+    }
+}
+
 @media (max-width: 400px) {
     .plot {
-        width: 250px;
+        width: 300px;
     }
 
     .idMain>h1 {
@@ -75,6 +126,10 @@
         width: 100px;
     }
 
+    .idSearchButtonDiv {
+        width: 150px;
+    }
+
     .idButtonDiv {
         width: 230px;
     }
@@ -83,8 +138,31 @@
         width: 70px;
     }
 
-    .idMain img {
-        width: 230px;
+    .poster {
+        width: 250px;
         height: auto;
+    }
+
+    .posterLeft {
+        margin-top: -60px;
+    }
+
+    .infoRight>h1 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 330px) {
+    .poster {
+        width: 220px;
+        height: auto;
+    }
+
+    .plot {
+        width: 250px;
+    }
+
+    .infoRight {
+        width: 250px;
     }
 }

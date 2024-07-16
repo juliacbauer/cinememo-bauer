@@ -49,7 +49,7 @@ export default function Generator(props) {
           <h1>Random Movie Generator</h1>
           <p>Desperate times call for desperate measures!</p>
           <br />
-          <button onClick={handleGenerator}>Generate Random Movie</button>
+          <button onClick={handleGenerator}>Randomize</button>
           <br />
           {loading ? (
             <p>Generating movie...</p>

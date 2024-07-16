@@ -2,16 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin-bottom: 30px;
 }
 
-.links > a {
+.links>a {
     text-decoration: none;
     color: inherit;
 }
 
-.links > a:visited {
+.links>a:visited {
     color: inherit;
 }
 
@@ -24,20 +23,19 @@
 
 .logoLeft {
     display: flex;
-    padding-left: 20px;
+    margin-left: 8%;
 }
 
 .rightLinks {
     display: flex;
     gap: 80px;
-    padding-right: 20px;
+    margin-right: 8%;
 }
 
 @media (max-width: 800px) {
     .rightLinks {
         gap: 30px;
     }
-
 
     .container {
         margin-bottom: 15px;
@@ -52,27 +50,31 @@
 
 @media (max-width: 450px) {
     .links {
-       font-size: .8rem; 
+        font-size: .9rem;
     }
 }
 
 @media (max-width: 400px) {
     .links {
-       font-size: .75rem; 
+        font-size: .8rem;
     }
+
     .rightLinks {
         gap: 10px;
+        margin-right: 2%;
     }
 }
 
-@media (max-width: 315px) {
-    .links {
-       font-size: .75rem; 
-    }
+@media (max-width: 330px) {
     .rightLinks {
         gap: 5px;
     }
+
+    .rightLinks {
+        gap: 12px;
+    }
+
     .links {
-        font-size: .7rem; 
+        font-size: .75rem;
     }
 }

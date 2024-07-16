@@ -39,19 +39,37 @@ export default function Home(props) {
           {props.isLoggedIn ? (
             <>
               <h1>Welcome {props.user.username}!</h1>
-              <div>
-                <p>Watch List: {props.watchList.length}</p>
-                <p>Watched List: {props.watchedList.length}</p>
+              <div className={styles.dashAmounts}>
+                <p>Titles to watch: {props.watchList.length}</p>
+                <p>Titles you've seen: {props.watchedList.length}</p>
                 <p>Favorites: {props.favoritesList.length}</p>
+              </div>
+              <p className={styles.appDescription}>Looking to explore more cinema? Search for new movies and TV shows or generate a random pick!</p>
+              <br />
+              <div className={styles.buttonDiv}>
+                <Link href="/search">
+                  <button className={styles.buttons} style={{ cursor: "pointer" }}>
+                    Discover
+                  </button>
+                </Link>
+                <Link href="/generator">
+                  <button className={styles.buttons} style={{ cursor: "pointer" }}>
+                    Randomize
+                  </button>
+                </Link>
               </div>
             </>
           ) : (
             <>
-              <h1>Welcome to Cinememo!</h1>
+              <h1>Cinememo</h1>
+              <h2>For movie addicts and TV show fanatics. </h2>
+              <p className={styles.appDescription}>Light-hearted rom coms, thrilling docuseries, feel-good classics – no matter your taste, Cinememo gives you the opportunity to hone in on your niche and expand your horizons.</p>
+              <p className={styles.appDescription}>Sign up or login today to discover and track endless movies and TV shows.</p>
+              <br />
               <div className={styles.buttonDiv}>
                 <Link href="/login">
                   <button className={styles.buttons} style={{ cursor: "pointer" }}>
-                    Log in
+                    Login
                   </button>
                 </Link>
                 <Link href="/signup">

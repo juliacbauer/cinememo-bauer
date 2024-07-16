@@ -33,7 +33,8 @@ export default function Watched(props) {
       <main>
         <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
-          <h1 className={styles.listTitles}>Watched</h1>
+          <h1 className={styles.listTitles}>Seen</h1>
+          <p>Total: {props.watchedList.length}</p>
           <br />
           <br />
           {props.watchedList.length > 0 ? (

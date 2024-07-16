@@ -68,7 +68,7 @@ export default function Search(props) {
                 name="movie-search" />
               <br />
               <br />
-              <button type="submit">Submit</button>
+              <button type="submit">Search</button>
             </form>
           </div>
           <div>
@@ -82,6 +82,8 @@ export default function Search(props) {
               <p>No movies or shows found.</p>
             )}
             <br />
+            <br />
+            <br />
             <div className={styles.searchResults}>
               {movieInfo && movieInfo.length > 0 && (
                 movieInfo.map((movie) => (
@@ -91,7 +93,9 @@ export default function Search(props) {
                         <img src={movie.Poster} alt="Movie Poster" />
                       </Link>
                     ) : (
-                      <p>Poster unavailable.</p>
+                      <Link href={`/movie/${movie.imdbID}`}>
+                        <p>Poster unavailable.</p>
+                      </Link>
                     )}
                   </div>
                 ))
