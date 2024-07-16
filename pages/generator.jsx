@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
+import { redirect } from "next/dist/server/api-utils";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -14,6 +15,7 @@ export const getServerSideProps = withIronSessionSsr(
       props.isLoggedIn = true
     } else {
       props.isLoggedIn = false
+      res.redirect("/login")
     }
     return { props }
   },

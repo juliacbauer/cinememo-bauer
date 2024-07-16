@@ -15,6 +15,7 @@ export const getServerSideProps = withIronSessionSsr(
       props.isLoggedIn = true;
     } else {
       props.isLoggedIn = false;
+      res.redirect("/login")
     }
     return { props };
   },

@@ -16,5 +16,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/logout"]
+  matcher: ["/logout", "/search", "/generator", "/watch", "/watched", "/favorites"]
 }
