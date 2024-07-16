@@ -8,7 +8,7 @@
 
 .plot {
     text-align: left;
-    width: 450px;
+    max-width: 100%;
 }
 
 .idButtonDiv {
@@ -71,10 +71,6 @@
 }
 
 @media (max-width: 750px) {
-    .plot {
-        width: 500px;
-    }
-
     .idMain>h1 {
         font-size: 1.5rem;
     }
@@ -89,10 +85,6 @@
 }
 
 @media (max-width: 570px) {
-    .plot {
-        width: 400px;
-    }
-
     .idMain>h1 {
         font-size: 1.3rem;
     }
@@ -110,10 +102,6 @@
 }
 
 @media (max-width: 400px) {
-    .plot {
-        width: 300px;
-    }
-
     .idMain>h1 {
         font-size: 1.2rem;
     }
