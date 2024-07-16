@@ -37,6 +37,7 @@
 .poster {
     width: 350px;
     height: auto;
+    border-radius: 15px;
 }
 
 .idSearchButtonDiv {
@@ -71,7 +72,7 @@
 }
 
 @media (max-width: 750px) {
-    .idMain>h1 {
+    .title {
         font-size: 1.5rem;
     }
 
@@ -85,10 +86,6 @@
 }
 
 @media (max-width: 570px) {
-    .idMain>h1 {
-        font-size: 1.3rem;
-    }
-
     .idButtons {
         width: 100px;
     }
@@ -102,10 +99,10 @@
 }
 
 @media (max-width: 400px) {
-    .idMain>h1 {
+    .title {
         font-size: 1.2rem;
     }
-
+    
     .idMain {
         font-size: .85rem;
     }
@@ -129,14 +126,11 @@
     .poster {
         width: 250px;
         height: auto;
+        border-radius: 10px;
     }
 
     .posterLeft {
         margin-top: -60px;
-    }
-
-    .infoRight>h1 {
-        font-size: 1.4rem;
     }
 }
 

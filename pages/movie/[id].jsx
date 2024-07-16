@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../../config/session";
 import db from "../../db";
-import Link from "next/link";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -39,6 +38,7 @@ export default function MovieInfo(props) {
   const { id } = router.query;
   const [movieInfo, setMovieInfo] = useState(null);
   const { watchList, watchedList, favoritesList } = props;
+  const [message, setMessage] = useState("")
   async function handleInfo(imdbId) {
     try {
       const res = await fetch(
@@ -78,6 +78,7 @@ export default function MovieInfo(props) {
     })
     if (res.status === 200) {
       router.replace(router.asPath)
+      setMessage("Title added")
       console.log("Movie added to Watch List:", movieInfo)
     }
   }
@@ -99,6 +100,7 @@ export default function MovieInfo(props) {
     })
     if (res.status === 200) {
       router.replace(router.asPath)
+      setMessage("Title added")
       console.log("Movie added to Watched List:", movieInfo)
     }
   }
@@ -120,6 +122,7 @@ export default function MovieInfo(props) {
     })
     if (res.status === 200) {
       router.replace(router.asPath)
+      setMessage("Title added")
       console.log("Movie added to Favorites List:", movieInfo)
     }
   }
@@ -135,6 +138,7 @@ export default function MovieInfo(props) {
     })
     if (res.status === 200) {
       router.replace(router.asPath)
+      setMessage("Title removed")
       console.log("Movie removed from Watch List:", movieInfo)
     }
   }
@@ -150,6 +154,7 @@ export default function MovieInfo(props) {
     })
     if (res.status === 200) {
       router.replace(router.asPath)
+      setMessage("Title removed")
       console.log("Movie removed from Watched List:", movieInfo)
     }
   }
@@ -165,6 +170,7 @@ export default function MovieInfo(props) {
     })
     if (res.status === 200) {
       router.replace(router.asPath)
+      setMessage("Title removed")
       console.log("Movie removed from Favorites List:", movieInfo)
     }
   }
@@ -178,7 +184,7 @@ export default function MovieInfo(props) {
             <div className={styles.posterLeft}>
               <img className={styles.poster} src={movieInfo.Poster} alt="Movie Poster" />
               <div className={styles.infoRight}>
-                <h1>{movieInfo.Title} ({movieInfo.Year})</h1>
+                <h1 className={styles.title}>{movieInfo.Title} ({movieInfo.Year})</h1>
                 <p>{movieInfo.Type && movieInfo.Type.charAt(0).toUpperCase() + movieInfo.Type.slice(1)} | {movieInfo.Genre} | IMDb Rating: {movieInfo.imdbRating}</p>
                 <p>Featuring {movieInfo.Actors}</p>
                 <p className={styles.plot}>{movieInfo.Plot}</p>
@@ -198,15 +204,9 @@ export default function MovieInfo(props) {
                     Remove</button>}
                 </div>
                 <br />
+                {message && <div >{message}</div>}
                 <br />
-                <div className={styles.idSearchButtonDiv}>
-                  <Link href="/search">
-                    <p style={{ cursor: "pointer" }}>Discover</p>
-                  </Link>
-                  <Link href="/search">
-                    <p style={{ cursor: "pointer" }}>Randomize</p>
-                  </Link>
-                </div>
+                <br />
               </div>
             </div>
           ) : (
