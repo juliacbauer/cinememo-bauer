@@ -77,7 +77,7 @@ export default function MovieInfo(props) {
       }),
     })
     if (res.status === 200) {
-      router.replace(router.asPath)
+      router.replace(router.asPath, undefined, { scroll: false })
       setMessage("Title added")
       console.log("Movie added to Watch List:", movieInfo)
     }
@@ -99,7 +99,7 @@ export default function MovieInfo(props) {
       }),
     })
     if (res.status === 200) {
-      router.replace(router.asPath)
+      router.replace(router.asPath, undefined, { scroll: false })
       setMessage("Title added")
       console.log("Movie added to Watched List:", movieInfo)
     }
@@ -121,7 +121,7 @@ export default function MovieInfo(props) {
       }),
     })
     if (res.status === 200) {
-      router.replace(router.asPath)
+      router.replace(router.asPath, undefined, { scroll: false })
       setMessage("Title added")
       console.log("Movie added to Favorites List:", movieInfo)
     }
@@ -137,7 +137,7 @@ export default function MovieInfo(props) {
       body: JSON.stringify({ imdbID: movieInfo.imdbID }),
     })
     if (res.status === 200) {
-      router.replace(router.asPath)
+      router.replace(router.asPath, undefined, { scroll: false })
       setMessage("Title removed")
       console.log("Movie removed from Watch List:", movieInfo)
     }
@@ -153,7 +153,7 @@ export default function MovieInfo(props) {
       body: JSON.stringify({ imdbID: movieInfo.imdbID }),
     })
     if (res.status === 200) {
-      router.replace(router.asPath)
+      router.replace(router.asPath, undefined, { scroll: false })
       setMessage("Title removed")
       console.log("Movie removed from Watched List:", movieInfo)
     }
@@ -169,7 +169,7 @@ export default function MovieInfo(props) {
       body: JSON.stringify({ imdbID: movieInfo.imdbID }),
     })
     if (res.status === 200) {
-      router.replace(router.asPath)
+      router.replace(router.asPath, undefined, { scroll: false })
       setMessage("Title removed")
       console.log("Movie removed from Favorites List:", movieInfo)
     }
