@@ -84,7 +84,6 @@ export default function Search(props) {
             )}
             <br />
             <br />
-            <br />
             <div className={styles.searchResults}>
               {movieInfo && movieInfo.length > 0 && (
                 movieInfo.map((movie) => (

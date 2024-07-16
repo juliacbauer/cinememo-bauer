@@ -143,6 +143,7 @@
     .searchResults img {
         width: 100px;
         height: auto;
+        border-radius: 8px;
     }
 }
 
@@ -150,6 +151,7 @@
     .searchResults {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         max-width: 350px;
+        gap: 10px;
     }
 
     .searchResults>div {
