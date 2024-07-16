@@ -36,7 +36,6 @@ export default function Watch(props) {
           <h1 className={styles.listTitles}>To Watch</h1>
           <p>Total: {props.watchList.length}</p>
           <br />
-          <br />
           {props.watchList.length > 0 ? (
             <div className={styles.searchResults}>
               {props.watchList.map(movie => (

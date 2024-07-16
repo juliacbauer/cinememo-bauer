@@ -32,6 +32,10 @@
     font-size: 1.3rem;
   }
 
+  .main {
+    min-height: 75vh;
+  }
+
   .buttons {
     width: 80px;
   }

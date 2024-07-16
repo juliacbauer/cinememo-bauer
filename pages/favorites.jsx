@@ -37,7 +37,6 @@ export default function Faves(props) {
           <h1 className={styles.listTitles}>Favorites</h1>
           <p>Total: {props.favoritesList.length}</p>
           <br />
-          <br />
           {props.favoritesList.length > 0 ? (
             <div className={styles.searchResults}>
               {props.favoritesList.map(movie => (

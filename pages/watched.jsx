@@ -36,7 +36,6 @@ export default function Watched(props) {
           <h1 className={styles.listTitles}>Seen</h1>
           <p>Total: {props.watchedList.length}</p>
           <br />
-          <br />
           {props.watchedList.length > 0 ? (
             <div className={styles.searchResults}>
               {props.watchedList.map(movie => (
