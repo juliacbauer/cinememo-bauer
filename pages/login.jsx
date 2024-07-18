@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
+import Head from "next/head";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -51,8 +52,15 @@ export default function Login(props) {
   }
   return (
     <>
+      <Head>
+        <title>Login</title>
+        <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <Header isLoggedIn={props.isLoggedIn} />
+
       <main>
-        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1>Login</h1>
           <br />

@@ -5,6 +5,7 @@ import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
 import db from "../db";
 import Link from "next/link";
+import Head from "next/head";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -32,8 +33,15 @@ export const getServerSideProps = withIronSessionSsr(
 export default function Faves(props) {
   return (
     <>
+      <Head>
+        <title>Favorites</title>
+        <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <Header isLoggedIn={props.isLoggedIn} />
+
       <main>
-        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1 className={styles.listTitles}>Favorites</h1>
           <p>Total: {props.favoritesList.length}</p>

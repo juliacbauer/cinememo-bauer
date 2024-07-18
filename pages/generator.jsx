@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
-import { redirect } from "next/dist/server/api-utils";
+import Head from "next/head";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -45,11 +45,18 @@ export default function Generator(props) {
 
   return (
     <>
+      <Head>
+        <title>Randomize</title>
+        <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <Header isLoggedIn={props.isLoggedIn} />
+
       <main>
-        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
           <h1>Random Movie Generator</h1>
-          <p>Desperate times call for desperate measures!</p>
+          <p>Desperate times call for desperate measures.</p>
           <br />
           <button onClick={handleGenerator}>Randomize</button>
           <br />
@@ -64,7 +71,7 @@ export default function Generator(props) {
                   </Link>
                 </div>
                 <Link href={`/movie/${movie.imdbID}`}>
-                  <img className={styles.mobileImg} src={movie.Poster} alt="Movie Poster" />
+                  <img className={styles.poster} src={movie.Poster} alt="Movie Poster" />
                 </Link>
               </div>
             )

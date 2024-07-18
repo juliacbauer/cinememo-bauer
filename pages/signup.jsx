@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Signup(props) {
   const router = useRouter()
@@ -46,8 +47,15 @@ export default function Signup(props) {
     }
   }
   return (
-    <div>
+    <>
+      <Head>
+        <title>Sign up</title>
+        <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
       <Header isLoggedIn={props.isLoggedIn} />
+
       <main>
         <div className={styles.main}>
           <h1>Sign Up</h1>
@@ -93,6 +101,6 @@ export default function Signup(props) {
         </div>
         <Footer />
       </main>
-    </div>
+    </>
   );
 }

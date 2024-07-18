@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../../config/session";
 import db from "../../db";
+import Head from "next/head";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -63,6 +64,7 @@ export default function MovieInfo(props) {
 
   async function addToWatch(e) {
     e.preventDefault()
+    setMessage("Loading...")
     console.log(movieInfo)
     const res = await fetch("/api/watch", {
       method: "POST",
@@ -85,6 +87,7 @@ export default function MovieInfo(props) {
 
   async function addToWatched(e) {
     e.preventDefault()
+    setMessage("Loading...")
     console.log(movieInfo)
     const res = await fetch("/api/watched", {
       method: "POST",
@@ -107,6 +110,7 @@ export default function MovieInfo(props) {
 
   async function addToFavorites(e) {
     e.preventDefault()
+    setMessage("Loading...")
     console.log(movieInfo)
     const res = await fetch("/api/favorites", {
       method: "POST",
@@ -129,6 +133,7 @@ export default function MovieInfo(props) {
 
   async function removeWatchMovie(movieId) {
     console.log("Removing movie with ID:", movieId)
+    setMessage("Loading...")
     const res = await fetch("/api/watch", {
       method: "DELETE",
       headers: {
@@ -145,6 +150,7 @@ export default function MovieInfo(props) {
 
   async function removeWatchedMovie(movieId) {
     console.log("Removing movie with ID:", movieId)
+    setMessage("Loading...")
     const res = await fetch("/api/watched", {
       method: "DELETE",
       headers: {
@@ -161,6 +167,7 @@ export default function MovieInfo(props) {
 
   async function removeFavoriteMovie(movieId) {
     console.log("Removing movie with ID:", movieId)
+    setMessage("Loading...")
     const res = await fetch("/api/favorites", {
       method: "DELETE",
       headers: {
@@ -177,8 +184,15 @@ export default function MovieInfo(props) {
 
   return (
     <>
+      <Head>
+        <title>Title Details</title>
+        <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <Header isLoggedIn={props.isLoggedIn} />
+
       <main>
-        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.idMain}>
           {movieInfo ? (
             <div className={styles.posterLeft}>

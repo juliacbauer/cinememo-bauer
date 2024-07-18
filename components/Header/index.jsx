@@ -30,7 +30,7 @@ export default function Header(props) {
           </div>
           <div className={styles.rightLinks}>
             <p className={styles.links}>
-              <Link href="/search">Discover</Link>
+              <Link href="/search">Search</Link>
             </p>
             <div className={styles.links} onClick={onClickLists} style={{ cursor: "pointer" }}>
               <p>

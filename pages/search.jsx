@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
+import Head from "next/head";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -53,16 +54,23 @@ export default function Search(props) {
 
   return (
     <>
+      <Head>
+        <title>Discover</title>
+        <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <Header isLoggedIn={props.isLoggedIn} />
+
       <main>
-        <Header isLoggedIn={props.isLoggedIn} />
         <div className={styles.main}>
-          <h1>Discover</h1>
-          <p>Explore endless movies and TV shows.</p>
+          <h1>Search</h1>
+          <p>Explore movies and TV shows.</p>
           <br />
           <div>
             <form className={styles.searchBarDiv} onSubmit={handleSubmit}>
-              <input
-                placeholder="Search by keyword"
+              <input className={styles.searchBarBox}
+                placeholder="Search by title keyword"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 type="text"

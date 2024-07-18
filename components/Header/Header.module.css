@@ -23,13 +23,13 @@
 
 .logoLeft {
     display: flex;
-    margin-left: 8%;
+    margin-left: 5%;
 }
 
 .rightLinks {
     display: flex;
     gap: 80px;
-    margin-right: 8%;
+    margin-right: 5%;
 }
 
 @media (max-width: 800px) {
