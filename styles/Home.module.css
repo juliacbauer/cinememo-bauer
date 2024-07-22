@@ -224,7 +224,11 @@
   }
 
   .logo {
-    margin-top: 5px;
+    margin-top: -5px;
+  }
+
+  .main>div>h2 {
+    font-size: 1.05rem;
   }
 }
 
@@ -256,7 +260,7 @@
   }
 
   .seenIcon {
-    margin-top: 3px;
+    margin-top: 4px;
     margin-bottom: -1px;
   }
 }
