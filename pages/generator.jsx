@@ -61,7 +61,7 @@ export default function Generator(props) {
           <button onClick={handleGenerator}>Randomize</button>
           <br />
           {loading ? (
-            <p>Generating movie...</p>
+            <p className={styles.loading}>Generating movie...</p>
           ) : (
             movie && (
               <div>

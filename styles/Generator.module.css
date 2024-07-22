@@ -35,6 +35,24 @@
     animation: bob 0.8s infinite;
 }
 
+@keyframes loading {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.loading {
+    animation: bob 1.3s infinite;
+}
+
 @media (max-width: 500px) {
     .main {
         min-height: 75vh;
