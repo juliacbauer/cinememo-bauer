@@ -32,7 +32,7 @@ export const getServerSideProps = withIronSessionSsr(
 export default function Watch(props) {
   return (
     <>
-    <Head>
+      <Head>
         <title>Watch</title>
         <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
         <link rel="icon" href="/favicon.png" />
@@ -42,16 +42,25 @@ export default function Watch(props) {
 
       <main>
         <div className={styles.main}>
-          <h1 className={styles.listTitles}>To Watch</h1>
-          <p>Total: {props.watchList.length}</p>
+          <h1 className={styles.listTitles}>Watch</h1>
+          <div className={styles.totalDiv} >
+            <img className={styles.watchIcon} src="/watchIcon.png" alt="Watch icon" />
+            <p>Total: {props.watchList.length}</p>
+          </div>
           <br />
           {props.watchList.length > 0 ? (
             <div className={styles.searchResults}>
               {props.watchList.map(movie => (
                 <div key={movie._id}>
-                  <Link href={`/movie/${movie.imdbID}`}>
-                    <img src={movie.poster} alt="Movie poster" />
-                  </Link>
+                  {movie.Poster !== "N/A" ? (
+                    <Link href={`/movie/${movie.imdbID}`}>
+                      <img className={styles.bob} src={movie.poster} alt="Movie Poster" />
+                    </Link>
+                  ) : (
+                    <Link href={`/movie/${movie.imdbID}`}>
+                      <img src="/noPoster.png" alt="Poster unavailable" />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

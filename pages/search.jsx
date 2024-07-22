@@ -55,7 +55,7 @@ export default function Search(props) {
   return (
     <>
       <Head>
-        <title>Discover</title>
+        <title>Search</title>
         <meta name="description" content="Cinememo: For movie addicts and TV show fanatics." />
         <link rel="icon" href="/favicon.png" />
       </Head>
@@ -64,7 +64,7 @@ export default function Search(props) {
 
       <main>
         <div className={styles.main}>
-          <h1>Search</h1>
+          <h1 className={styles.searchTitle}>Search</h1>
           <p>Explore movies and TV shows.</p>
           <br />
           <div>
@@ -77,7 +77,7 @@ export default function Search(props) {
                 name="movie-search" />
               <br />
               <br />
-              <button type="submit">Search</button>
+              <button className={styles.searchButton} type="submit">Search</button>
             </form>
           </div>
           <div>
@@ -88,7 +88,7 @@ export default function Search(props) {
               <p>Loading...</p>
             )}
             {searchPerformed && !loading && movieInfo.length === 0 && (
-              <p>No movies or shows found.</p>
+              <p style={{ marginTop: "30px" }}>No movies or shows found.</p>
             )}
             <br />
             <br />
@@ -98,11 +98,11 @@ export default function Search(props) {
                   <div key={movie.imdbID}>
                     {movie.Poster !== "N/A" ? (
                       <Link href={`/movie/${movie.imdbID}`}>
-                        <img src={movie.Poster} alt="Movie Poster" />
+                        <img className={styles.bob} src={movie.Poster} alt="Movie Poster" />
                       </Link>
                     ) : (
                       <Link href={`/movie/${movie.imdbID}`}>
-                        <p>Poster unavailable.</p>
+                        <img src="/noPoster.png" alt="Poster unavailable" />
                       </Link>
                     )}
                   </div>

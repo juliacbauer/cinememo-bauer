@@ -1,3 +1,61 @@
 :root {
   --max-width: 1100px;
+  --background-color: #292C35;
+  --color: #F2F4FA;
+}
+
+@font-face {
+  font-family: "Moderniz";
+  src: url('../public/Moderniz.otf');
+}
+
+@font-face {
+  font-family: "Garet";
+  src: url('../public/Garet-Book.ttf');
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--color)
+}
+
+h1 {
+  font-family: "Moderniz";
+  letter-spacing: 2px;
+}
+
+h2,
+p {
+  font-family: "Garet";
+}
+
+button {
+  font-family: "Garet";
+  color: var(--color);
+  background-color: #5968B0;
+  border: none;
+  border-radius: 6px;
+  padding: 7px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+button:hover {
+  transition: .3s;
+  background-color: #7C85B5;
+}
+
+input {
+  font-family: "Garet";
+  border-radius: 7px;
+  border: none;
+  padding: 7px;
+}
+
+@media (max-width: 700px) {
+
+  input,
+  button {
+    padding: 4px;
+  }
 }

@@ -70,9 +70,15 @@ export default function Generator(props) {
                     <h2>{movie.Title} ({movie.Year})</h2>
                   </Link>
                 </div>
-                <Link href={`/movie/${movie.imdbID}`}>
-                  <img className={styles.poster} src={movie.Poster} alt="Movie Poster" />
-                </Link>
+                {movie.Poster !== "N/A" ? (
+                  <Link href={`/movie/${movie.imdbID}`}>
+                    <img className={`${styles.poster} ${styles.bob}`} src={movie.Poster} alt="Movie Poster" />
+                  </Link>
+                ) : (
+                  <Link href={`/movie/${movie.imdbID}`}>
+                    <img src="/noPoster.png" alt="Poster unavailable" />
+                  </Link>
+                )}
               </div>
             )
           )}

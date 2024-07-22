@@ -1,10 +1,24 @@
 .main {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
   min-height: 100vh;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dashBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .buttonDiv {
@@ -18,84 +32,264 @@
 }
 
 .appDescription {
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .dashAmounts {
   display: flex;
   justify-content: space-between;
-  width: 400px;
+  width: 480px;
 }
 
-@media (max-width: 550px) {
-  .main>h2 {
-    font-size: 1.3rem;
+.iconDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  margin-top: 40px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.mainIcons {
+  width: 120px;
+}
+
+.watchIcon {
+  width: 50px;
+  margin-top: 7px;
+}
+
+.seenIcon {
+  height: 36px;
+}
+
+.favesIcon {
+  height: 33px;
+  margin-top: 6px;
+  margin-bottom: -2px;
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(0);
   }
 
-  .main {
-    min-height: 75vh;
+  50% {
+    transform: translateY(-3px);
   }
 
-  .buttons {
-    width: 80px;
+  100% {
+    transform: translateY(0);
   }
+}
 
-  .buttonDiv {
-    width: 200px;
+.bob:hover {
+  animation: bob 0.8s infinite;
+}
+
+@media (max-width: 620px) {
+  .main>div>h2 {
+    font-size: 1.4rem;
   }
 
   .appDescription {
-    max-width: 420px;
+    width: 90%;
+  }
+
+  .logo {
+    width: 180px;
+    height: auto;
+  }
+
+  .dashUser {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 580px) {
+  .dashAmounts {
+    width: 400px;
+  }
+
+  .mainIcons {
+    width: 100px;
+  }
+
+  .dashBtnText {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 550px) {
+  .main>div>h2 {
+    font-size: 1.3rem;
+  }
+
+  .buttons {
+    width: 90px;
+  }
+
+  .buttonDiv {
+    width: 250px;
+  }
+
+  .dashAmounts {
+    width: 370px;
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+}
+
+@media (max-width: 475px) {
+  .main>div>h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .main>div>h2 {
+    font-size: 1.2rem;
+  }
+
+  .main>div>p,
+  .buttons,
+  .iconAmounts {
+    font-size: .9rem;
+  }
+
+  .wordMark {
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    width: 130px;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .watchIcon {
+    width: 42px;
+  }
+
+  .seenIcon {
+    height: 29px;
+    margin-bottom: 2px;
+  }
+
+  .favesIcon {
+    height: 29px;
+    margin-bottom: -4px;
+  }
+
+  .dashUser {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .main>div>p,
+  .buttons,
+  .iconAmounts {
+    font-size: .8rem;
   }
 
   .dashAmounts {
     width: 300px;
   }
-}
-
-@media (max-width: 470px) {
-  .main>h2 {
-    font-size: 1.2rem;
-  }
-
-  .appDescription {
-    max-width: 350px;
-  }
-}
-
-@media (max-width: 400px) {
-  .main>p {
-    font-size: .9rem;
-  }
-
-  .buttons {
-    width: 80px;
-  }
-
-  .dashAmounts {
-    width: 250px;
-    font-size: .9rem;
-  }
-
-  .appDescription {
-    max-width: 320px;
-  }
 
   .buttonDiv {
-    width: 190px;
+    width: 220px;
+  }
+
+  .mainIcons {
+    width: 90px;
+  }
+
+  .dashUser {
+    font-size: 1rem;
+    margin-bottom: -10px;
+  }
+
+  .dashBtnText {
+    margin-top: -35px;
   }
 }
 
 @media (max-width: 370px) {
-  .main>h1 {
-    font-size: 1.6rem;
+  .dashAmounts {
+    width: 260px;
   }
 
-  .main>h2 {
+  .mainIcons {
+    width: 75px;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .wordMark {
+    font-size: 1.4rem;
+  }
+
+  .main>div>h2 {
     font-size: 1rem;
   }
 
-  .appDescription {
-    max-width: 280px;
+  .dashUser {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .mainIcons {
+    width: 65px;
+  }
+
+  .dashAmounts {
+    width: 230px;
+  }
+
+  .main>div>p,
+  .buttons,
+  .iconAmounts {
+    font-size: .7rem;
+  }
+
+  .dashUser {
+    margin-top: 20px;
+  }
+
+  .watchIcon {
+    width: 35px;
+  }
+
+  .seenIcon {
+    height: 24px;
+    margin-top: 3px;
+    margin-bottom: -1px;
+  }
+
+  .favesIcon {
+    height: 24px;
+  }
+
+  .dashBtnText {
+    margin-top: -65px;
+  }
+
+  .logo {
+    width: 90px;
+    height: auto;
   }
 }

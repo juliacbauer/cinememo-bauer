@@ -1,6 +1,6 @@
 .idMain {
     margin-top: 100px;
-    min-height: 100vh;
+    min-height: 110vh;
     display: flex;
     justify-content: center;
     align-items: baseline;
@@ -31,19 +31,36 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    max-height: 300px;
 }
 
 .poster {
     width: 350px;
     height: auto;
     border-radius: 15px;
+    border: solid 1px #5D5F68;
+    object-fit: cover;
+}
+
+.noPoster {
+    width: 350px;
+    height: auto;
 }
 
 .idSearchButtonDiv {
     display: flex;
     justify-content: space-between;
     width: 185px;
+}
+
+.removeBtn {
+    background-color: #EF5555;
+    transition: .3s;
+}
+
+.removeBtn:hover {
+    background-color: #FF8080;
+    transition: .3s;
 }
 
 @media (max-width: 900px) {
@@ -69,19 +86,32 @@
     .idSearchButtonDiv {
         align-self: center;
     }
-}
 
-@media (max-width: 750px) {
+    .poster,
+    .noPoster {
+        width: 250px;
+        height: auto;
+        margin-top: -30px;
+    }
+
     .title {
         font-size: 1.5rem;
     }
+}
 
+@media (max-width: 750px) {
     .idButtonDiv {
         width: 350px;
     }
 
     .idButtons {
         width: 100px;
+    }
+
+    .poster,
+    .noPoster {
+        width: 230px;
+        height: auto;
     }
 }
 
@@ -92,19 +122,39 @@
 }
 
 @media (max-width: 530px) {
-    .poster {
-        width: 300px;
+
+    .poster,
+    .noPoster {
+        width: 200px;
         height: auto;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .infoRight {
+        font-size: .9rem;
+    }
+
+    .idButtons {
+        font-size: .7rem;
+    }
+
+    .idMain {
+        min-height: 90vh;
     }
 }
 
 @media (max-width: 400px) {
-    .title {
-        font-size: 1.2rem;
-    }
-    
     .idMain {
         font-size: .85rem;
+        min-height: 80vh;
+    }
+
+    .infoRight {
+        width: 330px;
+        font-size: .8rem;
     }
 
     .idButtons {
@@ -116,7 +166,7 @@
     }
 
     .idButtonDiv {
-        width: 230px;
+        width: 250px;
     }
 
     .idButtons {
@@ -124,7 +174,7 @@
     }
 
     .poster {
-        width: 250px;
+        width: 180px;
         height: auto;
         border-radius: 10px;
     }
@@ -132,14 +182,35 @@
     .posterLeft {
         margin-top: -60px;
     }
+
+    .title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .infoRight {
+        width: 300px;
+        font-size: .75rem;
+    }
+
+    .title {
+        font-size: .8rem;
+    }
+
+    .poster,
+    .noPoster {
+        width: 160;
+        height: auto;
+        margin-top: -10px;
+    }
+
+    .idMain {
+        min-height: 90vh;
+    }
 }
 
 @media (max-width: 330px) {
-    .poster {
-        width: 220px;
-        height: auto;
-    }
-
     .plot {
         width: 250px;
     }

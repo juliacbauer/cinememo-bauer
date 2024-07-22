@@ -196,7 +196,11 @@ export default function MovieInfo(props) {
         <div className={styles.idMain}>
           {movieInfo ? (
             <div className={styles.posterLeft}>
-              <img className={styles.poster} src={movieInfo.Poster} alt="Movie Poster" />
+              {movieInfo.Poster !== "N/A" ? (
+                <img className={styles.poster} src={movieInfo.Poster} alt="Movie Poster" />
+              ) : (
+                <img className={styles.noPoster} src="/noPoster.png" alt="Poster unavailable" />
+              )}
               <div className={styles.infoRight}>
                 <h1 className={styles.title}>{movieInfo.Title} ({movieInfo.Year})</h1>
                 <p>{movieInfo.Type && movieInfo.Type.charAt(0).toUpperCase() + movieInfo.Type.slice(1)} | {movieInfo.Genre} | IMDb Rating: {movieInfo.imdbRating}</p>
@@ -204,23 +208,22 @@ export default function MovieInfo(props) {
                 <p className={styles.plot}>{movieInfo.Plot}</p>
                 <br />
                 <div className={styles.idButtonDiv}>
-                  {!inWatchList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={addToWatch}>
+                  {!inWatchList && <button className={styles.idButtons} onClick={addToWatch}>
                     Watch</button>}
-                  {inWatchList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={() => removeWatchMovie(movieInfo)}>
+                  {inWatchList && <button className={`${styles.idButtons} ${styles.removeBtn}`} onClick={() => removeWatchMovie(movieInfo)}>
                     Remove</button>}
-                  {!inWatchedList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={addToWatched}>
+                  {!inWatchedList && <button className={styles.idButtons} onClick={addToWatched}>
                     Seen</button>}
-                  {inWatchedList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={() => removeWatchedMovie(movieInfo)}>
+                  {inWatchedList && <button className={`${styles.idButtons} ${styles.removeBtn}`} onClick={() => removeWatchedMovie(movieInfo)}>
                     Remove</button>}
-                  {!inFavoritesList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={addToFavorites}>
+                  {!inFavoritesList && <button className={styles.idButtons} onClick={addToFavorites}>
                     Favorites</button>}
-                  {inFavoritesList && <button style={{ cursor: "pointer" }} className={styles.idButtons} onClick={() => removeFavoriteMovie(movieInfo)}>
+                  {inFavoritesList && <button className={`${styles.idButtons} ${styles.removeBtn}`} onClick={() => removeFavoriteMovie(movieInfo)}>
                     Remove</button>}
                 </div>
                 <br />
-                {message && <div >{message}</div>}
                 <br />
-                <br />
+                {message && <p>{message}</p>}
               </div>
             </div>
           ) : (

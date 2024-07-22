@@ -25,15 +25,15 @@ export default function Header(props) {
         <>
           <div className={styles.logoLeft}>
             <p className={styles.links}>
-              <Link href="/">Home</Link>
+              <Link href="/"><img className={`${styles.logo} ${styles.bob}`} src="/logo.png" alt="Logo" /></Link>
             </p>
           </div>
           <div className={styles.rightLinks}>
             <p className={styles.links}>
               <Link href="/search">Search</Link>
             </p>
-            <div className={styles.links} onClick={onClickLists} style={{ cursor: "pointer" }}>
-              <p>
+            <div onClick={onClickLists} style={{ cursor: "pointer" }}>
+              <p className={styles.links}>
                 My Lists
               </p>
               {displayLists && (
@@ -56,7 +56,7 @@ export default function Header(props) {
         <>
           <div className={styles.logoLeft}>
             <p className={styles.links}>
-              <Link href="/">Home</Link>
+              <Link href="/"><img className={`${styles.logo} ${styles.bob}`} src="/logo.png" alt="Logo" /></Link>
             </p >
           </div>
           <div className={styles.rightLinks}>

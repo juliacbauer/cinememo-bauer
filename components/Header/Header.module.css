@@ -7,18 +7,28 @@
 
 .links>a {
     text-decoration: none;
-    color: inherit;
 }
 
 .links>a:visited {
     color: inherit;
 }
 
+.links {
+    transition: .3s;
+}
+
+.links:hover {
+    color: #a4acda;
+    transition: .3s;
+}
+
 .displayLists {
     position: absolute;
-    background-color: white;
+    background-color: #5D5F68;
     padding: 10px;
-    margin-top: -10px;
+    margin-top: -8px;
+    line-height: 7px;
+    border-radius: 8px;
 }
 
 .logoLeft {
@@ -32,6 +42,29 @@
     margin-right: 5%;
 }
 
+.logo {
+    width: 45px;
+    height: auto;
+}
+
+@keyframes bob {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bob:hover {
+    animation: bob 0.8s infinite;
+}
+
 @media (max-width: 800px) {
     .rightLinks {
         gap: 30px;
@@ -40,11 +73,21 @@
     .container {
         margin-bottom: 15px;
     }
+
+    .logo {
+        width: 35px;
+        height: auto;
+    }
 }
 
 @media (max-width: 500px) {
     .rightLinks {
         gap: 15px;
+    }
+
+    .logo {
+        width: 30px;
+        height: auto;
     }
 }
 
@@ -56,12 +99,17 @@
 
 @media (max-width: 400px) {
     .links {
-        font-size: .9rem;
+        font-size: .8rem;
     }
 
     .rightLinks {
-        gap: 12px;
+        gap: 10px;
         margin-right: 2%;
+    }
+
+    .logo {
+        width: 25px;
+        height: auto;
     }
 }
 
@@ -71,10 +119,32 @@
     }
 
     .rightLinks {
-        gap: 12px;
+        gap: 10px;
     }
 
     .links {
-        font-size: .75rem;
+        font-size: .7rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .logo {
+        width: 20px;
+        height: auto;
+    }
+
+    .rightLinks {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 280px) {
+    .logo {
+        width: 18px;
+        height: auto;
+    }
+
+    .links {
+        font-size: .6rem;
     }
 }

@@ -72,6 +72,7 @@ export default function Login(props) {
               id="username"
               onChange={handleChange}
               value={username}
+              autoCapitalize="none"
             />
             <br />
             <input
@@ -89,7 +90,7 @@ export default function Login(props) {
           <br />
           <br />
           <Link href="/signup">
-            <button style={{ cursor: "pointer" }}>
+            <button>
               Sign up instead &rarr;
             </button>
           </Link>
