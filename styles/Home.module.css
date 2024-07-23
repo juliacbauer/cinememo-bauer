@@ -31,9 +31,6 @@
   width: 100px;
 }
 
-.appDescription {
-  max-width: 600px;
-}
 
 .dashAmounts {
   display: flex;
@@ -94,10 +91,6 @@
 @media (max-width: 620px) {
   .main>div>h2 {
     font-size: 1.4rem;
-  }
-
-  .appDescription {
-    width: 90%;
   }
 
   .logo {
@@ -172,7 +165,7 @@
   .logo {
     width: 130px;
     height: auto;
-    margin-top: 30px;
+    margin-top: -5px;
   }
 
   .watchIcon {
@@ -263,6 +256,12 @@
   .seenIcon {
     margin-top: 4px;
     margin-bottom: -1px;
+  }
+
+  .main>div>p,
+  .buttons,
+  .iconAmounts {
+    font-size: .75rem;
   }
 }
 

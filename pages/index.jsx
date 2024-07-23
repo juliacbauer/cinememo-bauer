@@ -109,7 +109,7 @@ export default function Home(props) {
                 <br />
                 <h1 className={styles.wordMark}>Cinememo</h1>
                 <h2>For movie addicts and TV show fanatics. </h2>
-                <p className={styles.appDescription}>Light-hearted rom coms, thrilling docuseries, feel-good classics – no matter your taste, Cinememo allows you to hone in on your niche or expand your horizons.</p>
+                <p className={styles.appDescription}>Light-hearted rom-coms, thrilling docuseries, feel-good classics – no matter your taste, Cinememo allows you to hone in on your niche or expand your horizons.</p>
                 <p className={styles.appDescription}>Sign up or login to discover and track endless movies and TV shows.</p>
                 <br />
                 <div className={styles.buttonDiv}>
