@@ -1,57 +1,48 @@
-## Cinememo
-Cinememo is a full-stack movie and TV show tracking NextJS app using MongoDB!
+# Cinememo <img src="faviconRM.png" alt="logo" width="20px" height="auto"/>
 
-Here is a brief summary of its features:
+Cinememo is a full-stack, NextJS, MongoDB movie and TV show tracking app using the [OMDb API](https://www.omdbapi.com/).
 
-- Users can create an account (username and password)
-- There will be a search page that will display movie and TV show information based on a user search query
+I created this app for fellow film-lovers who are always searching for the next thing to watch and enjoy keeping track of what they have seen. Thanks to the OMDb API, Cinememo allows users to track not just movies but also TV shows, too.
+
+Click [here](https://cinememo.vercel.app/) to view the live site and create an account.
+
+## App Overview
+
+With Cinememo, users can:
+
+- Create an account with a username and password
+- Search for movies and TV shows by title keyword
+- View the first 10 poster images of the related search results 
+- Click on any result to view more information, including: 
     - Title
     - Year of release
-    - Movie or TV show poster image
-    - Plot summary
+    - Poster image
+    - Type (movie, show, documentary, etc.)
+    - Genre
+    - IMDb rating
     - Cast members
-    - And more
-- Users can add any movie or TV show to their favorites list or their want-to-watch list
-- Users can also delete movies and TV shows from these lists
-- There will also be a random movie or TV show generator for when users are having trouble deciding what to watch!
+    - Plot summary
+- Add any title to their watch list, seen list, or favorites list
+- Remove any title from these lists
+- Generate a random movie pick
+
+## Understanding UX
+
+Throughout the entire app creation process, I made sure to have the mindset of a user despite being the developer. I wanted this app to be as user-friendly as possible. As such, I paid attention to the little things while coding Cinememo by including features like:
+- Loading message while search results or movie details are gathered
+- Loading message while adding a title to or removing one from a user list
+- Message indicating the title was successfully added or removed
+- Different button colors based on the add and remove functions
+- Animated loading message while the random movie generator is pulling movie information
+- Animated images and buttons responsive to hovering
+
+<br />
+
+<img src="TitleAdded.png" alt="Title added" height="300px" width="auto"/> <img src="TitleRemoved.png" alt="Title removed" height="300px" width="auto"/> <img src="GeneratingMsg.png" alt="Loading message" height="300px" width="auto"/> 
+
+Designs by Julia Bauer.
+
+<br />
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
