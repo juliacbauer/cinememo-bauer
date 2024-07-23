@@ -1,10 +1,10 @@
-# Cinememo <img src="faviconRM.png" alt="logo" width="20px" height="auto"/>
+# Cinememo <img src="faviconRM.png" alt="logo" width="30px" height="auto"/>
 
-Cinememo is a full-stack, NextJS, MongoDB movie and TV show tracking app using the [OMDb API](https://www.omdbapi.com/).
+Cinememo is a full-stack, NextJS, MongoDB movie and TV show tracking app using the <a href="https://www.omdbapi.com/" target="</a>_blank">OMDb API</a>.
 
 I created this app for fellow film-lovers who are always searching for the next thing to watch and enjoy keeping track of what they have seen. Thanks to the OMDb API, Cinememo allows users to track not just movies but also TV shows, too.
 
-Click [here](https://cinememo.vercel.app/) to view the live site and create an account.
+Click <a href="https://cinememo.vercel.app/" target="</a>_blank">here</a> to view the live site and create an account.
 
 ## App Overview
 
@@ -40,7 +40,7 @@ Throughout the entire app creation process, I made sure to have the mindset of a
 
 <img src="TitleAdded.png" alt="Title added" height="300px" width="auto"/> <img src="TitleRemoved.png" alt="Title removed" height="300px" width="auto"/> <img src="GeneratingMsg.png" alt="Loading message" height="300px" width="auto"/> 
 
-Designs by Julia Bauer.
+Designed by Julia Bauer.
 
 <br />
 
