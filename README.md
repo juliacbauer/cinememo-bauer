@@ -1,4 +1,4 @@
-# Cinememo <img src="faviconRM.png" alt="logo" width="30px" height="auto"/>
+# Cinememo <img src="faviconRM.png" alt="logo" width="25px" height="auto"/>
 
 Cinememo is a full-stack, NextJS, MongoDB movie and TV show tracking app using the <a href="https://www.omdbapi.com/" target="</a>_blank">OMDb API</a>.
 
