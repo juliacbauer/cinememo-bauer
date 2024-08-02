@@ -14,11 +14,11 @@
 .idButtonDiv {
     display: flex;
     justify-content: space-between;
-    width: 300px;
+    width: 350px;
 }
 
 .idButtons {
-    width: 80px;
+    width: 100px;
 }
 
 .posterLeft {
@@ -70,6 +70,10 @@
         align-items: center;
     }
 
+    .idButtonDiv {
+        width: 350px;
+    }
+
     .infoRight {
         text-align: center;
         margin-top: -40px;
@@ -100,24 +104,11 @@
 }
 
 @media (max-width: 750px) {
-    .idButtonDiv {
-        width: 350px;
-    }
-
-    .idButtons {
-        width: 100px;
-    }
 
     .poster,
     .noPoster {
         width: 230px;
         height: auto;
-    }
-}
-
-@media (max-width: 570px) {
-    .idButtons {
-        width: 100px;
     }
 }
 
@@ -137,10 +128,6 @@
         font-size: .9rem;
     }
 
-    .idButtons {
-        font-size: .7rem;
-    }
-
     .idMain {
         min-height: 90vh;
     }
@@ -157,20 +144,16 @@
         font-size: .8rem;
     }
 
-    .idButtons {
-        width: 100px;
-    }
-
     .idSearchButtonDiv {
         width: 150px;
     }
 
-    .idButtonDiv {
-        width: 250px;
+    .idButtons {
+        width: 90px;
     }
 
-    .idButtons {
-        width: 70px;
+    .idButtonDiv {
+        width: 300px;
     }
 
     .poster {
@@ -207,6 +190,16 @@
 
     .idMain {
         min-height: 90vh;
+    }
+
+
+    .idButtons {
+        width: 80px;
+        font-size: .7rem;
+    }
+
+    .idButtonDiv {
+        width: 280px;
     }
 }
 

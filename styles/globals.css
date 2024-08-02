@@ -35,7 +35,7 @@ button {
   background-color: #5968B0;
   border: none;
   border-radius: 6px;
-  padding: 7px;
+  padding: 10px;
   transition: .3s;
   cursor: pointer;
 }
@@ -50,12 +50,4 @@ input {
   border-radius: 7px;
   border: none;
   padding: 7px;
-}
-
-@media (max-width: 700px) {
-
-  input,
-  button {
-    padding: 4px;
-  }
 }
